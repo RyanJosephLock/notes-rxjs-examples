@@ -1,0 +1,13 @@
+/* 
+1.0 Observable
+An array that gets built over time and can be subscribed to.
+*/
+
+// Create the observable
+const observable = Rx.Observable.create( observer => {
+    observer.next( 'hello' )
+    observer.next( 'world' )
+})
+
+// Subscribe to observable
+observable.subscribe(val => print(val))

@@ -1,0 +1,9 @@
+
+// Observables can set a timer that emits after it runs out 
+
+const timer = Rx.Observable.timer(1000)
+timer.subscribe(done => print('Ding!!!'))
+
+// OR Observables can set a timer that runs on an interval
+const interval = Rx.Observable.interval(1000)
+interval.subscribe(int => print(new Date().getSeconds() ))

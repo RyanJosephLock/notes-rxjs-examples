@@ -1,0 +1,6 @@
+
+// Create an observable of mouse click events
+const clicks = Rx.Observable.fromEvent(document, 'click')
+
+// log each event to console
+clicks.subscribe(click => console.log(click))

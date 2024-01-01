@@ -1,0 +1,22 @@
+
+// Create promise that resolves after 1 second
+// This replicates a http requrest or other async operation
+
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('resolved!')
+    }, 1000)
+})
+
+
+// Convert the promise into an observable
+// This is useful when working with a javascript library that is built on promises
+
+const obsvPromise = Rx.Observable.fromPromise(promise)
+
+// Subscribe and print the promise result via the Observable
+
+obsvPromise.subscribe(result => print(result) )
+
+// Note: it's also possible to convert an Observable into a promise by using toPromise()
+
